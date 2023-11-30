@@ -1,6 +1,34 @@
+<?php
+$symbols = '!?&%$<>^+-*/()[]{}@#_=';
+$letters = 'qwertyuiopasdfghjklzxcvbnm';
+$upLetters = strtoupper($letters);
+$numbers = '0123456789';
+
+
+if (isset($_GET['passwordLength'])) {
+    $passwordLength = $_GET['passwordLength'];
+    $newPassword = '';
+    while (strlen($newPassword) < $passwordLength) {
+        $valori = $symbols . $letters . $upLetters . $numbers;
+        $randomCharacter = $valori[rand(0, strlen($valori) - 1)];
+
+        if (!strpos($newPassword, $randomCharacter)) {
+            $newPassword = $valori;
+        }
+
+    }
+    return $newPassword;
+}
+
+?>
+
+
 <main class="container pt-5 ">
     <div>
+        <?php
+        echo $newPassword;
 
+        ?>
     </div>
     <div>
         <form action="main.php" methods="GET">
@@ -11,7 +39,8 @@
                     </div>
                     <div class="col-auto">
                         <input type="password" id="inputPassword6" class="form-control"
-                            aria-describedby="passwordHelpInline">
+                            aria-describedby="passwordHelpInline" min='5' max='15' name="passwordLength">
+
                     </div>
                 </div>
                 <div class="row g-3 align-items-center ">
@@ -33,6 +62,7 @@
                                 No
                             </label>
                         </div>
+
                         <div class="form-check ">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
@@ -54,7 +84,7 @@
                     </div>
 
                 </div>
-                <button type="button" class="btn btn-primary">Invia</button>
+                <button type="submit" class="btn btn-primary">Invia</button>
                 <button type="button" class="btn btn-secondary">Annulla</button>
             </div>
 
