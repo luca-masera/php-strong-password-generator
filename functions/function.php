@@ -1,6 +1,6 @@
 <?php
 
-function password()
+function passwordCreate()
 {
     $symbols = '!?&%$<>^+-*/()[]{}@#_=';
     $letters = 'qwertyuiopasdfghjklzxcvbnm';
@@ -16,12 +16,13 @@ function password()
             $randomCharacter = $valori[rand(0, strlen($valori) - 1)];
 
             if (!strpos($newPassword, $randomCharacter)) {
-                $newPassword .= $valori;
+                $newPassword .= $randomCharacter;
             }
 
         }
-        return $newPassword;
+
     }
+    return $newPassword;
 
 }
 ?>
