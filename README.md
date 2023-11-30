@@ -1,4 +1,4 @@
-Esercizio del 30/11/2023: PHP Strong Password Generator
+<!--Esercizio del 30/11/2023: PHP Strong Password Generator
 nome repo: php-strong-password-generator
 Descrizione
 Dobbiamo creare una pagina che permetta ai nostri utenti di utilizzare il nostro generatore di password (abbastanza) sicure.
@@ -13,3 +13,4 @@ Invece di visualizzare la password nella index, effettuare un redirect ad una pa
 Milestone 4 (BONUS)
 Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme).
 Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali.
+-->
