@@ -1,31 +1,12 @@
 <?php
-$symbols = '!?&%$<>^+-*/()[]{}@#_=';
-$letters = 'qwertyuiopasdfghjklzxcvbnm';
-$upLetters = strtoupper($letters);
-$numbers = '0123456789';
-
-
-if (isset($_GET['passwordLength'])) {
-    $passwordLength = $_GET['passwordLength'];
-    $newPassword = '';
-    while (strlen($newPassword) < $passwordLength) {
-        $valori = $symbols . $letters . $upLetters . $numbers;
-        $randomCharacter = $valori[rand(0, strlen($valori) - 1)];
-
-        if (!strpos($newPassword, $randomCharacter)) {
-            $newPassword .= $valori;
-        }
-
-    }
-    return $newPassword;
-}
-
+include __DIR__ . "/functions/function.php";
+$newPassword = password();
 ?>
 
 
 <main class="container pt-5 ">
     <div>
-        <?php echo $newPassword ?>
+        <?php echo $newPassword; ?>
     </div>
     <div>
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="GET">
